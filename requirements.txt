@@ -1,0 +1,6 @@
+cryptography
+pycryptodome
+pandas
+matplotlib
+psutil
+oqs
