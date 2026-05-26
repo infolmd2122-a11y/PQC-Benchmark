@@ -1,25 +1,34 @@
-# PQC Benchmark
+# PQC-Benchmark 🔐
 
-Comparative performance evaluation between classical cryptography and post-quantum cryptography.
+Benchmarking Classical vs Post-Quantum Cryptography using Python and liboqs.
 
-## Algorithms
-- RSA-2048
-- ECC-P256
-- Kyber512
-- Dilithium
+## 📌 Project Overview
 
-## Metrics
+This project compares classical cryptographic algorithms (RSA, ECC) with post-quantum algorithms (Kyber, Dilithium).
+
+It evaluates:
 - Key generation time
+- Encryption / signature time
 - Key sizes
 - Signature sizes
-- Memory usage
 
-## Technologies
-- Python
-- liboqs
+## ⚙️ Technologies Used
+
+- Python 3
+- liboqs-python
+- pycryptodome
 - cryptography
-- pandas
 - matplotlib
+- pandas
 
-## Results
-Benchmark results are available in the results/ directory.
+## 📁 Project Structure
+
+
+
+## 🚀 How to Run
+
+```bash
+pip install -r requirements.txt
+
+python benchmarks/benchmark.py
+python graphs/plot_results.py

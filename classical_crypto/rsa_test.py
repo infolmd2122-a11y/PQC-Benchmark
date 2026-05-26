@@ -1,28 +1,19 @@
+from Crypto.PublicKey import RSA
 import time
-from cryptography.hazmat.primitives.asymmetric import rsa
 
 def rsa_benchmark():
+
     start = time.time()
+    key = RSA.generate(2048)
+    keygen_time = time.time() - start
 
-    private_key = rsa.generate_private_key(
-        public_exponent=65537,
-        key_size=2048
-    )
-
-    end = time.time()
-
-    execution_time = end - start
-
-    public_key = private_key.public_key()
-
-    private_size = private_key.key_size
-    public_size = public_key.key_size
+    private_key = key.export_key()
+    public_key = key.publickey().export_key()
 
     return {
         "Algorithm": "RSA-2048",
-        "KeyGen_Time": execution_time,
-        "Private_Key_Size": private_size,
-        "Public_Key_Size": public_size
+        "KeyGen_Time": keygen_time,
+        "Key_Size": len(public_key)
     }
 
 if __name__ == "__main__":
