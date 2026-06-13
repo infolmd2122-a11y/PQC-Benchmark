@@ -1,28 +1,21 @@
-import pandas as pd
+import subprocess
 
-from classical_crypto.rsa_test import rsa_benchmark
-from classical_crypto.ecc_test import ecc_benchmark
-from post_quantum.kyber_test import kyber_benchmark
+print("=== PQC BENCHMARK START ===")
 
+print("Kyber running...")
+subprocess.run(["python3", "benchmarks/kyber.py"])
+print("Kyber done")
 
-def run_all():
+print("Dilithium running...")
+subprocess.run(["python3", "benchmarks/dilithium.py"])
+print("Dilithium done")
 
-    results = []
+print("SPHINCS running...")
+subprocess.run(["python3", "benchmarks/sphincs.py"])
+print("SPHINCS done")
 
-    results.append(rsa_benchmark())
-    results.append(ecc_benchmark())
-    results.append(kyber_benchmark())
+print("McEliece running...")
+subprocess.run(["python3", "benchmarks/mceliece.py"])
+print("McEliece done")
 
-    return results
-
-
-if __name__ == "__main__":
-
-    results = run_all()
-
-    df = pd.DataFrame(results)
-
-    print("\n=== RESULTS ===\n")
-    print(df)
-
-    df.to_csv("results/benchmark_results.csv", index=False)
+print("=== DONE ===")

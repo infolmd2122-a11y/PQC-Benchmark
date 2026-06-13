@@ -1,8 +1,4 @@
-cryptography
-pycryptodome
+liboqs-python
+numpy
 pandas
 matplotlib
-psutil
-oqs
-scipy
-seaborn

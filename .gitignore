@@ -1,5 +1,8 @@
 venv/
 __pycache__/
 *.pyc
+*.csv
+
+graphs/*.png
 results/
 liboqs-python/
